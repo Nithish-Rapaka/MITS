@@ -7,6 +7,7 @@ import Register from './pages/Register/Register'
 import {Routes,Route} from "react-router-dom"
 import Project from './pages/projects/Projects'
 import About from './pages/About us/About'
+import pattern from '../src/assets/pattern.png';
 function App() {
 
   return (

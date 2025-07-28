@@ -1,12 +1,13 @@
+
 .Register {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    gap: 80px;
+    gap: 300px;
     padding: 0 40px;
-    background-color: #8c9bb1;
+  
 }
 
 .image img {
@@ -21,7 +22,7 @@
     background-color: #8c9bb1;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 500px;
+    height: 550px;
     padding: 20px;
     width: 400px;
     box-shadow: -3px -3px 7px #ffffff73,

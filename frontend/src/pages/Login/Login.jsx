@@ -2,12 +2,25 @@ import React from "react";
 import "./Login.css";
 import logo from '../../assets/logo.jpg';
 import { Link } from "react-router-dom";
+import pattern from '../../assets/pattern.png';
 function Login() {
     return (
         <>
-            <div className="Login">
+            <div className="Login"
+                style={{
+                    backgroundImage: `url(${pattern})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    minHeight: '100vh',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '300px',
+                    padding: '0 40px' }}>
                 <div className="image">
-                    <img src={logo} alt="image" />
+                    <img src={logo} alt="image" style={{ width: "500px" }} />
                 </div>
                 <div className="content">
                     <div className="text">Login</div>
@@ -54,7 +67,7 @@ function Login() {
                         </div>
                     </form>
                 </div>
-            </div>
+            </div >
         </>
     );
 }

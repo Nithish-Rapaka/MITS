@@ -7,7 +7,7 @@ function Register() {
         <>
             <div className="Register">
                 <div className="image">
-                    <img src={logo} alt="image" />
+                    <img src={logo} alt="image" style={{width:"500px"}} />
                 </div>
                 <div class="form">
                     <div class="subtitle">Let's create your account!</div>
@@ -50,10 +50,11 @@ function Register() {
                         <div class="cut cut-short"></div>
                         <label for="semester" class="placeholder">Semester</label>
                     </div>
-                    <br />
-                    <p>Already a member</p>
-                    <Link to="/login" className="signin-link">Sign in</Link>
                     <button type="submit" class="submit">Register</button>
+                    <br />
+                    <p>Already a member <Link to="/login" className="signin-link">Sign in</Link></p>
+                    
+                    
 
                 </div>
             </div>
