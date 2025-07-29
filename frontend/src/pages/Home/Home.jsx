@@ -6,6 +6,7 @@ import slide3 from "../../assets/slide3.jpg";
 function Home() {
     return (
         <div className="Home">
+            <h1>commited by rajaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
             <div
                 id="carouselExampleIndicators"
                 className="carousel slide"
