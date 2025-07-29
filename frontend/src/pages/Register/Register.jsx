@@ -2,12 +2,28 @@ import React from "react";
 import logo from "../../assets/logo.jpg";
 import './Register.css';
 import { Link } from "react-router-dom";
+import pattern from '../../assets/pattern.png';
 function Register() {
     return (
         <>
-            <div className="Register">
+            <div className="Register"
+                style={{
+                    backgroundImage: `url(${pattern})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    minHeight: '100vh',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '300px',
+                    padding: '0 40px'
+                }}
+
+            >
                 <div className="image">
-                    <img src={logo} alt="image" style={{width:"500px"}} />
+                    <img src={logo} alt="image" style={{ width: "500px" }} />
                 </div>
                 <div class="form">
                     <div class="subtitle">Let's create your account!</div>
@@ -53,8 +69,8 @@ function Register() {
                     <button type="submit" class="submit">Register</button>
                     <br />
                     <p>Already a member <Link to="/login" className="signin-link">Sign in</Link></p>
-                    
-                    
+
+
 
                 </div>
             </div>
