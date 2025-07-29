@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import logo from '../../assets/logo.jpg';
 import { Link } from "react-router-dom";
 import pattern from '../../assets/pattern.png';
 function Login() {
+
+    const [login, SetLogin] = useState({
+        email: '',
+        password: ''
+    })
+
+    function handleInput(e) {
+        let value = e.target.value;
+        let fieldname = e.target.name;
+        SetLogin(prev => ({
+            ...prev,
+            [fieldname]: value
+        }))
+    }
+
+        function Submit(){
+            fetch('http://localhost:5000/login',{
+                method:'POST',
+                headers:{
+                    "Content-Type":"application/json",
+                },
+                body:JSON.stringify(login)
+            })
+        }
     return (
         <>
             <div className="Login"
@@ -18,7 +42,8 @@ function Login() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '300px',
-                    padding: '0 40px' }}>
+                    padding: '0 40px'
+                }}>
                 <div className="image">
                     <img src={logo} alt="image" style={{ width: "500px" }} />
                 </div>
@@ -26,7 +51,7 @@ function Login() {
                     <div className="text">Login</div>
                     <form action="#">
                         <div className="field">
-                            <input required type="text" className="input" />
+                            <input required type="text" className="input" name="email" onChange={handleInput} value={login.email} />
                             <span className="span">
                                 <svg
                                     width="20"
@@ -38,11 +63,11 @@ function Login() {
                                     <path d="M256 0c-74.439 0-135 60.561-135 135s60.561 135 135 135 135-60.561 135-135S330.439 0 256 0zM423.966 358.195C387.006 320.667 338.009 300 286 300h-60c-52.008 0-101.006 20.667-137.966 58.195C51.255 395.539 31 444.833 31 497c0 8.284 6.716 15 15 15h420c8.284 0 15-6.716 15-15 0-52.167-20.255-101.461-57.034-138.805z" />
                                 </svg>
                             </span>
-                            <label className="label">Email or Phone</label>
+                            <label className="label" htmlFor="email" >Email"</label>
                         </div>
 
                         <div className="field">
-                            <input required type="password" className="input" />
+                            <input required type="password" className="input" name="password" onChange={handleInput} value={login.password} />
                             <span className="span">
                                 <svg
                                     width="20"
@@ -60,7 +85,7 @@ function Login() {
                             <a href="#">Forgot Password?</a>
                         </div>
 
-                        <button type="submit" className="button">Sign in</button>
+                        <button type="button" className="button" onClick={Submit}>Sign in</button>
 
                         <div className="sign-up">
                             Not a member? <p><Link to='/Register'>Signup</Link></p>
